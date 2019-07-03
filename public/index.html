@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>The Weather Here</title>
+</head>
+
+<body>
+    <h1>The Weather Here</h1>
+    <div><a href="/">Check-In</a> | <a href="/checkins">View Check-Ins</a></div>
+    <p>The weather at <span id="latitude"></span>&deg;, <span id="longitude"></span>&deg; is <span
+            id="weather_summary"></span> with a
+        temperature of <span id="weather_temp"></span>&deg;F.</p>
+    <p>The concentration of particulate matter (<span id='aq_param'></span>) was <span id='aq_quality'></span> as of
+        <span id='aq_timestamp'></span>.</p>
+    <script src="index.js"></script>
+</body>
+
+</html>
