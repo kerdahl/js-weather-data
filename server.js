@@ -54,3 +54,5 @@ app.get('/weather/:lat/:long', async (request, response) => {
 
     response.json(data);
 });
+
+exports = module.exports = app;
