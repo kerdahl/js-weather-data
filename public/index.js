@@ -17,11 +17,12 @@ if ('geolocation' in navigator) {
             weather = json.weather.currently;
             airQuality = json.air_quality;
 
+            document.getElementById('weather_temp').textContent = weather.temperature;
+            document.getElementById('weather_summary').textContent = weather.summary;
+
             const measurement = airQuality.results[0].measurements[0];
             const timestamp = new Date(measurement.lastUpdated);
 
-            document.getElementById('weather_temp').textContent = weather.temperature;
-            document.getElementById('weather_summary').textContent = weather.summary;
             document.getElementById('aq_param').textContent = measurement.parameter;
             document.getElementById('aq_quality').textContent = `${measurement.value} ${measurement.unit}`;
             document.getElementById('aq_timestamp').textContent = timestamp.toLocaleString();
