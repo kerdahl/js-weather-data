@@ -39,7 +39,7 @@ app.post('/api', (request, response) => {
 
 app.get('/weather/:lat/:long', async (request, response) => {
     console.log(request.params);
-    const api_url = `https://api.darksky.net/forecast/adedaf8dfd2178fe6765cfcca84bd3cc/${request.params.lat},${request.params.long}`;
+    const api_url = `https://api.darksky.net/forecast/${api_key}/${request.params.lat},${request.params.long}`;
     const weatherResponse = await fetch(api_url);
     const weatherData = await weatherResponse.json();
 
