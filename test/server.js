@@ -1,12 +1,11 @@
 require('dotenv').config();
-import {
-  expect
-} from 'chai';
-import request from 'request';
+let expect = require('chai').expect;
+let request = require('request');
+
 const port = process.env.PORT || 3000;
 
 // eslint-disable-next-line no-unused-vars
-import app from '../server';
+let app = require('../server');
 
 describe('Server Status', () => {
   after(() => {
