@@ -40,7 +40,7 @@ if ('geolocation' in navigator) {
 
             document.getElementById('weather_temp').textContent = weather.temperature;
             document.getElementById('weather_summary').textContent = weather.summary;
-            document.getElementById('weather_apparent').textContet = weather.apparentTemperature;
+            document.getElementById('weather_apparent').textContent = weather.apparentTemperature;
             document.getElementById('weather_dewPoint').textContent = weather.dewPoint;
             document.getElementById('weather_humidity').textContent = weather.humidity;
             document.getElementById('weather_windSpeed').textContent = weather.windSpeed;
