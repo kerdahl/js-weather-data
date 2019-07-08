@@ -5,18 +5,65 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>The Weather Here</title>
 </head>
 
 <body>
-    <h1>The Weather Here</h1>
-    <div><a href="/">Check-In</a> | <a href="/checkins">View Check-Ins</a></div>
-    <p>The weather at <span id="latitude"></span>&deg;, <span id="longitude"></span>&deg; is <span
-            id="weather_summary"></span> with a
-        temperature of <span id="weather_temp"></span>&deg;F.</p>
-    <p>The concentration of particulate matter (<span id='aq_param'></span>) was <span id='aq_quality'></span> as of
-        <span id='aq_timestamp'></span>.</p>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">The Weather Here</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Check-In <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/checkins">View Check-Ins</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- <div><a href="/">Check-In</a> | <a href="/checkins">View Check-Ins</a></div> -->
+    <main role="main" class="container">
+        <div class="jumbotron">
+            <h1>The Weather</h1>
+            <p>The weather at <span id="latitude"></span>&deg;, <span id="longitude"></span>&deg;:
+                <ul>
+                    <li><span id="weather_summary"></span>
+                    </li>
+                    <li>
+                        <span id="weather_temp"></span>&deg;F
+                    </li>
+                    <li>
+                        Feels like <span id="weather_apparent"></span>&deg;F
+                    </li>
+                    <li>
+                        Dew Point: <span id="weather_dewPoint"></span>&deg;
+                    </li>
+                    <li>
+                        Humidity: <span id="weather_humidity"></span>%
+                    </li>
+                    <li>
+                        Wind: Average speed of <span id="weather_windSpeed"></span> MPH <span
+                            id="weather_windDirection"></span>, with
+                        gusts up to
+                        <span id="weather_windGust"></span> MPH.
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <div class="jumbotron">
+            <h1>The Air Quality</h1>
+            <p>The concentration of particulate matter (<span id='aq_param'></span>) was <span id='aq_quality'></span>
+                as of
+                <span id='aq_timestamp'></span>.</p>
+        </div>
+    </main>
     <script src="index.js"></script>
 </body>
 

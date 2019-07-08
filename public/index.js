@@ -17,8 +17,35 @@ if ('geolocation' in navigator) {
             weather = json.weather.currently;
             airQuality = json.air_quality;
 
+            let windBearing = weather.windBearing;
+            let windDirection = null;
+
+            if ((0 <= windBearing && windBearing <= 22.5) || (337.5 <= windBearing && windBearing < 360)) {
+                windDirection = 'S';
+            } else if (22.5 < windBearing && windBearing < 67.5) {
+                windDirection = 'SW';
+            } else if (67.5 <= windBearing && windBearing < 112.5) {
+                windDirection = 'W';
+            } else if (112.5 <= windBearing && windBearing < 157.5) {
+                windDirection = 'NW';
+            } else if (157.5 <= windBearing && windBearing < 202.5) {
+                windDirection = 'N';
+            } else if (202.5 <= windBearing && windBearing < 247.5) {
+                windDirection = 'NE';
+            } else if (247.5 <= windBearing && windBearing < 292.5) {
+                windDirection = 'E';
+            } else if (292.5 <= windBearing && windBearing < 337.5) {
+                windDirection = 'SE';
+            }
+
             document.getElementById('weather_temp').textContent = weather.temperature;
             document.getElementById('weather_summary').textContent = weather.summary;
+            document.getElementById('weather_apparent').textContet = weather.apparentTemperature;
+            document.getElementById('weather_dewPoint').textContent = weather.dewPoint;
+            document.getElementById('weather_humidity').textContent = weather.humidity;
+            document.getElementById('weather_windSpeed').textContent = weather.windSpeed;
+            document.getElementById('weather_windDirection').textContent = windDirection;
+            document.getElementById('weather_windGust').textContent = weather.windGust;
 
             const measurement = airQuality.results[0].measurements[0];
             const timestamp = new Date(measurement.lastUpdated);
