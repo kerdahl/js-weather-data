@@ -1,7 +1,10 @@
 # js-weather-data
 Displays weather and air quality data for your current location.
-This repository is linked to [Heroku](https://www.heroku.com) and can be viewed live [here](https://js-weather-data.herokuapp.com/).
-CI performed using the free tier of [Codeship](https://codeship.com/).
+
+Based off of the [Working with Data and APIs in Javascript](https://thecodingtrain.com/Courses/data-and-apis) course by [The Coding Train](https://thecodingtrain.com).
+
+This repository is linked to [Heroku](https://www.heroku.com) and can be viewed live [here](https://js-weather-data.herokuapp.com).
+CI performed using the free tier of [Codeship](https://codeship.com).
 
 This project makes use of:
 - [Bootstrap](https://getboostrap.com)
