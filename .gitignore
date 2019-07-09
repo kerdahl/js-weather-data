@@ -88,6 +88,9 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+# NeDB
+database.db
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
