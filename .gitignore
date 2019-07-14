@@ -89,7 +89,7 @@ typings/
 .dynamodb/
 
 # NeDB
-database.db
+#database.db
 
 ### VisualStudioCode ###
 .vscode/*

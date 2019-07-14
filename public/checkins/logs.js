@@ -19,13 +19,16 @@ async function getData() {
 
         const marker = L.marker([item.lat, item.long]).addTo(mymap);
 
-        let txt = `The weather at ${item.lat}°, ${item.long}° is ${item.weather.summary} with a temperature of ${item.weather.temperature}°F. `;
+        const cityString = item.place.city;
 
+        const timestamp = (new Date(item.timestamp)).toLocaleString();
+
+        let aqString = "There is no air quality reading for this location.";
         if (item.airQuality.results.length > 0) {
-            txt += `The concentration of particulate matter (${item.airQuality.results[0].measurements[0].parameter}) was ${item.airQuality.results[0].measurements[0].value} ${item.airQuality.results[0].measurements[0].unit} as of ${item.airQuality.results[0].measurements[0].lastUpdated}`;
-        } else {
-            txt += `There is no air quality reading for this location.`;
+            aqString = `The concentration of particulate matter (${item.airQuality.results[0].measurements[0].parameter}) was ${item.airQuality.results[0].measurements[0].value} ${item.airQuality.results[0].measurements[0].unit} as of ${item.airQuality.results[0].measurements[0].lastUpdated}`;
         }
+
+        let txt = `The weather in ${cityString} (${item.lat}°, ${item.long}°) was ${item.weather.summary} with a temperature of ${item.weather.temperature}°F at ${timestamp}. ${aqString}`;
 
         marker.bindPopup(txt);
     }

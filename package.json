@@ -14,6 +14,7 @@
   "author": "Kyle Erdahl",
   "license": "MIT",
   "dependencies": {
+    "@google/maps": "^0.5.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "nedb": "^1.8.0",

@@ -1,5 +1,5 @@
 //Geolocate
-let lat, long, weather, airQuality;
+let lat, long, weather, airQuality, place;
 
 if ('geolocation' in navigator) {
   console.log('Geolocation available');
@@ -16,6 +16,7 @@ if ('geolocation' in navigator) {
 
       weather = json.weather.currently;
       airQuality = json.air_quality;
+      place = json.location;
 
       let windBearing = weather.windBearing;
       let windDirection = null;
@@ -50,6 +51,9 @@ if ('geolocation' in navigator) {
       document.getElementById('weather_windDirection').textContent = windDirection;
       document.getElementById('weather_windGust').textContent = weather.windGust;
 
+      const cityString = `${place.city}, ${place.state}`;
+      document.getElementById('city').textContent = cityString;
+
       const measurement = airQuality.results[0].measurements[0];
       const timestamp = new Date(measurement.lastUpdated);
 
@@ -59,15 +63,26 @@ if ('geolocation' in navigator) {
 
       submitLocation();
     } catch (error) {
-      console.error(error);
-      document.getElementById('aq_param').textContent = 'Unknown';
-      document.getElementById('aq_quality').textContent = 'Unknown';
-      document.getElementById('aq_timestamp').textContent = 'Unknown';
+      //console.error(error);
+      let handled = false;
+      if (airQuality.results.length < 1) {
+        console.log('No air quality data')
+        document.getElementById('aq_param').textContent = 'Unknown';
+        document.getElementById('aq_quality').textContent = 'Unknown';
+        document.getElementById('aq_timestamp').textContent = 'Unknown';
 
-      airQuality = {
-        results: []
-      };
-      submitLocation();
+        airQuality = {
+          results: []
+        };
+
+        handled = true;
+      }
+
+      if (handled) {
+        submitLocation();
+      } else {
+        console.error(error);
+      }
     }
   });
 } else {
@@ -128,7 +143,8 @@ async function submitLocation() {
     lat,
     long,
     weather,
-    airQuality
+    airQuality,
+    place
   };
   const options = {
     method: 'POST',
