@@ -12,6 +12,7 @@ This project makes use of:
 - [Codeship Continuous Integration](https://codeship.com)
 - [DarkSky API](https://darksky.com/dev)
 - [ESLint Linter](https://eslint.org)
+- [Google Geocode API](https://developers.google.com/maps/documentation/geocoding/start)
 - [Heroku Cloud Application Platform](https://www.heroku.com)
 - [Leaflet.JS Interactive Maps](https://leafletjs.com)
 - [Mocha Test Framework](https://mochajs.org)
