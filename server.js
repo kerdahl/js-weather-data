@@ -9,9 +9,7 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening at port ${port}`));
 
 app.use(express.static('public'));
-app.use(express.json({
-  limit: '1mb'
-}));
+app.use(express.json({ limit: '1mb' }));
 
 const database = new Datastore('database.db');
 database.loadDatabase();
@@ -25,7 +23,7 @@ const googleMapsClient = require('@google/maps').createClient({
 });
 
 app.get('/api', (request, response) => {
-  database.find({}, (err, data) => {
+  database.find({}).sort({ timestamp: 1 }).exec((err, data) => {
     if (err) {
       response.end;
       return;
