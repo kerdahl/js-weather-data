@@ -1,7 +1,7 @@
 {
-  "name": "server-side",
-  "version": "1.0.0",
-  "description": "This is the data selfie app by Joey Lee, modified by The Coding Train.",
+  "name": "js-weather-data",
+  "version": "1.1.0",
+  "description": "Retrieve weather and air quality information and store it in Firestore.",
   "main": "server.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha"
@@ -9,7 +9,17 @@
   "keywords": [
     "example",
     "data",
-    "selfie"
+    "selfie",
+    "weather",
+    "darksky",
+    "firebase",
+    "firestore",
+    "openaq",
+    "bootstrap",
+    "reverse geocode",
+    "openstreetmaps",
+    "coding train",
+    "weather icons"
   ],
   "author": "Kyle Erdahl",
   "license": "MIT",
@@ -17,14 +27,16 @@
     "@google/maps": "^0.5.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "nedb": "^1.8.0",
+    "firebase": "^6.3.1",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "eslint": "^6.0.1",
     "lodash": "^4.17.14",
     "mocha": "^6.1.4",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "type-detect": "^4.0.8"
   }
 }
