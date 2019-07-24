@@ -46,7 +46,7 @@ if ('geolocation' in navigator) {
       addClass(document.getElementById('summary_icon'), condition_icon);
       document.getElementById('weather_apparent').textContent = weather.apparentTemperature;
       document.getElementById('weather_dewPoint').textContent = weather.dewPoint;
-      document.getElementById('weather_humidity').textContent = weather.humidity;
+      document.getElementById('weather_humidity').textContent = weather.humidity * 100;
       document.getElementById('weather_windSpeed').textContent = weather.windSpeed;
       document.getElementById('weather_windDirection').textContent = windDirection;
       document.getElementById('weather_windGust').textContent = weather.windGust;
