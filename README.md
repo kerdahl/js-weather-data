@@ -1,3 +1,5 @@
+[![Codeship Status for kerdahl/js-weather-data](https://app.codeship.com/projects/df3a4060-7f6b-0137-fdd2-7ad05795ae37/status?branch=master)](https://app.codeship.com/projects/351949)
+
 # js-weather-data
 
 Displays weather and air quality data for your current location.
@@ -22,5 +24,3 @@ This project makes use of:
 - [OpenAQ API](https://docs.openaq.org)
 - [OpenStreetMap](https://www.openstreetmap.org)
 - [Weather Icons](http://weathericons.io)
-
-[![Codeship Status for kerdahl/js-weather-data](https://app.codeship.com/projects/df3a4060-7f6b-0137-fdd2-7ad05795ae37/status?branch=master)](https://app.codeship.com/projects/351949)
